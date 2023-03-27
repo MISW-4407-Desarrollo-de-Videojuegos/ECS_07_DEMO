@@ -15,7 +15,6 @@ def system_ball_steering(world:esper.World, ball_cfg:dict, delta_time:float):
         closest_bad, bad_block_dist = _get_closest_bad_block_pos(world, c_t.pos)
 
         # Follow Vector
-        follow_dampening = good_block_dist / 40
         c_bs.follow_vector = closest_good - c_t.pos
         desired_good_length = ball_cfg["follow_force"]
         c_bs.follow_vector.scale_to_length(desired_good_length)
